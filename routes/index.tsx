@@ -1,15 +1,16 @@
+// deno-lint-ignore-file
 import Header from "../islands/Header.tsx";
 import Footer from "../islands/Footer.tsx";
 import { loadLang } from "../lib/i18n.ts";
-import { PageProps } from "$fresh/server.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import { useEffect } from "preact/hooks";
 
-export const handler: any = {
+export const handler: Handlers<Record<string, string>> = {
     async GET(_req: any, ctx: any) {
         const url = new URL(_req.url);
         const lang = url.searchParams.get("lang") ?? "id";
         const messages = await loadLang(lang);
-        return ctx.render({ lang, messages});
+        return ctx.render({ lang, messages });
     },
 };
 
@@ -94,9 +95,9 @@ const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, strin
                 <a href="https://wa.me/+62" className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">{messages.daftar_button}</a>
             </section>
 
-            {/* Footer */}
-            <Footer messages={ messages } />
         </main>
+        {/* Footer */}
+        <Footer messages={ messages } />
     </>);
 };
 
