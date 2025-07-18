@@ -153,7 +153,7 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
                 <p className="mb-6 max-w-lg mx-auto">
                     {messages.contact_person.title2} : {messages.contact_person.text2}
                 </p>
-                <a href="https://wa.me/6285276688611" className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">{messages.daftar_button}</a>
+                <a href="https://wa.me/+6285276688611" className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">{messages.daftar_button}</a>
             </section>
         </main>
 
