@@ -33,7 +33,7 @@ const buttonChange = (lang: string) => {
     </>);
 };
 
-const link: string[] = ["/", "#profile", "#news", "#contacts"];
+const link: string[] = ["/", "/profile", "#news", "#contacts"];
 
 const Header = ({ messages }: HeaderProps) => {
     const [ scrolled, setScrolled ] = useState(false);
@@ -53,7 +53,7 @@ const Header = ({ messages }: HeaderProps) => {
         
         setLang(langInURL ?? langInStorage ?? "id");
         
-        const onScroll = () => setScrolled(globalThis.scrollY > 500);
+        const onScroll = () => setScrolled(globalThis.scrollY > 50);
         globalThis.addEventListener("scroll", onScroll);
         return() => globalThis.removeEventListener("scroll", onScroll);
     }, []);
