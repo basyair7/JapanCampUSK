@@ -47,14 +47,13 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
         </head>
         <Header messages={ messages } />
 
-        <main className="min-h-screen bg-white text-gray-800">
-            <div className="font-sans">
-                <header className="bg-gradient-to-r from-pink-500 to-red-500 text-white py-12 px-4 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">{messages["nav-title2"]}</h1>
-                </header>
-
+        <main className="bg-gray-50 min-h-screen text-gray-800">
+            <header className="bg-gradient-to-r from-pink-500 to-red-500 text-white py-12 px-4 text-center">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">{messages["nav-title2"]}</h1>
+            </header>
+            <div className="font-sans max-w-7xl mx-auto px-4">
                 {/* Why Japan Camp */}
-                <section class="bg-gray-50 px-4 md:px-16 py-10">
+                <section class="px-4 md:px-16 py-10">
                     <h2 class="text-2xl font-bold text-gray-800 mb-4">
                     {messages.kenapa_japan_camp.title}
                     </h2>
@@ -73,7 +72,7 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
                 </section>
                 
                 {/* Pendahuluan */}
-                <section className="bg-white px-4 md:px-16 py-10">
+                <section className="px-4 md:px-16 py-16">
                     <h2 className="text-4xl font-bold text-gray-800 mb-6">{messages.pendahuluan_title}</h2>
                     <div className="bg-gray-50 shadow-md rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
                         <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
@@ -84,38 +83,49 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
                         </div>
                     </div>
                 </section>
+
+                {/* Tujuan */}
+                <section className="px-4 md:px-16 py-16">
+                    <h2 className="text-4xl font-bold text-gray-800 mb-6">{messages.tujuan_jc.title}</h2>
+                    <div className="bg-gray-50 shadow-md rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
+                            <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
+                            <p>{messages.tujuan_jc.text}</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Peserta JC */}
+                <section className="px-4 md:px-16 py-16">
+                    <h2 className="text-4xl font-bold text-gray-800 mb-6">{messages.peserta_jc.title}</h2>
+                    <div className="bg-gray-50 shadow-md rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
+                        <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
+                            <p>{messages.peserta_jc.text}</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Lokasi */}
+                <section className="px-4 md:px-16 py-16">
+                    <h2 className="text-4xl font-bold text-gray-800 mb-6">{messages.lokasi.title}</h2>
+                    <div className="bg-gray-50 shadow-md rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
+                        <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
+                            <p>{messages.lokasi.text}</p>
+                        </div>
+                        <div class="w-full.h-96">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.275001044993!2d95.3068816!3d5.5261562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30403ba8320e05dd%3A0xb5b41815404121fa!2sIKAFT%20USK!5e0!3m2!1sid!2sid!4v1752829395980!5m2!1sid!2sid"
+                                width="100%"
+                                height="400"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+
+                    </div>
+                </section>
             </div>
-
-            {/* Tujuan */}
-            <section className="bg-white px-4 md:px-16 py-10">
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">{messages.tujuan_jc.title}</h2>
-                <div className="bg-gray-50 shadow-md rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
-                        <p>{messages.tujuan_jc.text}</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Lokasi */}
-            <section className="bg-white px-4 md:px-16 py-10">
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">{messages.lokasi.title}</h2>
-                <div className="bg-gray-50 shadow-md rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
-                        <p>{messages.lokasi.text}</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Peserta JC */}
-            <section className="bg-white px-4 md:px-16 py-10">
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">{messages.peserta_jc.title}</h2>
-                <div className="bg-gray-50 shadow-md rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
-                    <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
-                        <p>{messages.peserta_jc.text}</p>
-                    </div>
-                </div>
-            </section>
-
             {/* Call to Action */}
             <section className="bg-gray-100 py-16 text-center">
                 <h2 className="text-2x1 font-semibold mb-4">{messages.daftar_title}</h2>
