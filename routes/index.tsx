@@ -43,7 +43,7 @@ const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, strin
 
         <main className="min-h-screen bg-white text-gray-800">
                 {/* Hero Section */}
-                <section className="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-white" style={{ backgroundImage: `url("/${img_list[0]}")`}}>
+                <section className="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-white" style={{ backgroundImage: `url("/banner.jpg")`}}>
                     {/* Overlay semi-transparant */}
                     <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 

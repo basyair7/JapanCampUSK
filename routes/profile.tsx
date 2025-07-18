@@ -3,6 +3,7 @@ import { Handlers, PageProps } from "$fresh/server.ts"
 import { loadLang } from "../lib/i18n.ts";
 import Header from "../islands/Header.tsx";
 import Footer from "../islands/Footer.tsx";
+import { NONE } from "$fresh/runtime.ts";
 
 type Alasan = {
     judul: string;
@@ -48,14 +49,26 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
         <Header messages={ messages } />
 
         <main className="bg-gray-50 min-h-screen text-gray-800">
-            <header className="bg-gradient-to-r from-pink-500 to-red-500 text-white py-12 px-4 text-center">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">{messages["nav-title2"]}</h1>
+            <header className="relative text-black py-40 px-4 text-center overflow-hidden">
+                {/* Background image blur */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center blur-sm scale-105"
+                    style={{ backgroundImage: `url("/banner2.jpg")` }}
+                ></div>
+
+                <div className="relative z-10 pt-8">
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold">
+                        {messages["nav-title2"]}
+                    </h1>
+
+                </div>
             </header>
+
             <div className="font-sans max-w-7xl mx-auto px-4">
                 {/* Why Japan Camp */}
                 <section class="px-4 md:px-16 py-10">
                     <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                    {messages.kenapa_japan_camp.title}
+                        {messages.kenapa_japan_camp.title}
                     </h2>
                     <p class="text-gray-600 mb-6">{messages.kenapa_japan_camp.description}</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -126,11 +139,19 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
                     </div>
                 </section>
             </div>
+            
             {/* Call to Action */}
             <section className="bg-gray-100 py-16 text-center">
                 <h2 className="text-2x1 font-semibold mb-4">{messages.daftar_title}</h2>
                 <p className="mb-6 max-w-lg mx-auto">
                     {messages.daftar_text}
+                </p>
+                
+                <p className="mb-6 max-w-lg mx-auto">
+                    {messages.contact_person.title1} : {messages.contact_person.text1}
+                </p>
+                <p className="mb-6 max-w-lg mx-auto">
+                    {messages.contact_person.title2} : {messages.contact_person.text2}
                 </p>
                 <a href="https://wa.me/+62" className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">{messages.daftar_button}</a>
             </section>
