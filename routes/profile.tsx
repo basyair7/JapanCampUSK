@@ -110,10 +110,19 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
             <section className="bg-white px-4 md:px-16 py-10">
                 <h2 className="text-4xl font-bold text-gray-800 mb-6">{messages.peserta_jc.title}</h2>
                 <div className="bg-gray-50 shadow-md rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
+                    <div className="space-y-5 text-gray-700 text-lg md:text-xl leading-relaxed">
                         <p>{messages.peserta_jc.text}</p>
                     </div>
                 </div>
+            </section>
+
+            {/* Call to Action */}
+            <section className="bg-gray-100 py-16 text-center">
+                <h2 className="text-2x1 font-semibold mb-4">{messages.daftar_title}</h2>
+                <p className="mb-6 max-w-lg mx-auto">
+                    {messages.daftar_text}
+                </p>
+                <a href="https://wa.me/+62" className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">{messages.daftar_button}</a>
             </section>
         </main>
 
