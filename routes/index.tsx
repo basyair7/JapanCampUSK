@@ -77,7 +77,7 @@ const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, strin
                     </section>
                     
                     {/* Gallery */}
-                    <section className="py-16 bg-white">
+                    <section className="py-16">
                         <div className="container mx-auto px-4 text-center">
                             <h2 className="text-2xl font-bold mb-8">{messages.title_doc}</h2>
                             <div className="grid gird-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
