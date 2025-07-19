@@ -1,35 +1,8 @@
 import { h } from "preact";
-import { Handlers, PageProps } from "$fresh/server.ts"
+import { Handlers, PageProps } from "$fresh/server.ts";
 import { loadLang } from "../lib/i18n.ts";
 import Header from "../islands/Header.tsx";
 import Footer from "../islands/Footer.tsx";
-import { NONE } from "$fresh/runtime.ts";
-
-type Alasan = {
-    judul: string;
-    isi: string;
-};
-
-type Messages = {
-    title: string;
-    desc: string;
-    pendahuluan: {
-        text1: string;
-        text2: string;
-        text3: string;
-        text4: string;
-    };
-    tujuan_jc: string;
-    lokasi: {
-        title: string;
-        text: string;
-    };
-    kenapa_japan_camp: {
-        title: string;
-        description: string;
-        alasan: Alasan[];
-    };
-};
 
 export const handler: Handlers<Record<string, string>> = {
     async GET(_req: any, ctx: any) {
@@ -49,15 +22,16 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
         <Header messages={ messages } />
 
         <main className="bg-gray-50 min-h-screen text-gray-800">
-            <header className="relative text-black py-40 px-4 text-center overflow-hidden">
+            <header className="relative py-40 px-4 text-center overflow-hidden">
                 {/* Background image blur */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center blur-sm scale-105"
+                    className="absolute inset-0 bg-cover bg-center scale-105"
                     style={{ backgroundImage: `url("/banner2.jpg")` }}
                 ></div>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
 
                 <div className="relative z-10 pt-8">
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold">
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white">
                         {messages["nav-title2"]}
                     </h1>
 
