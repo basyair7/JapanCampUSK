@@ -41,7 +41,7 @@ const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, strin
 
         <Header messages={ messages }/>
 
-        <main className="min-h-screen bg-white text-gray-800">
+        <main className="min-h-screen bg-gray-50 text-gray-800">
                 {/* Hero Section */}
                 <section className="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-white" style={{ backgroundImage: `url("/banner.jpg")`}}>
                     {/* Overlay semi-transparant */}
