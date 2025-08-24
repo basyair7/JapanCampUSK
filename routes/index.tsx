@@ -1,6 +1,7 @@
 // deno-lint-ignore-file
 import Header from "../islands/Header.tsx";
 import Footer from "../islands/Footer.tsx";
+import ScrollButton from "../islands/ScrollButton.tsx";
 import { loadLang } from "../lib/i18n.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { useEffect } from "preact/hooks";
@@ -22,17 +23,29 @@ const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, strin
     useEffect(() => {
         const hash = globalThis.location.hash;
         if (hash) {
-        const tryScroll = () => {
-            const el = document.querySelector(hash);
-            if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-            } else {
+            const tryScroll = () => {
+                const el = document.querySelector(hash);
+                if (el) {
+                    (el as HTMLElement).scrollIntoView({ behavior: "smooth" });
+                } else {
+                    setTimeout(tryScroll, 100);
+                }
+            };
             setTimeout(tryScroll, 100);
-            }
-        };
-        setTimeout(tryScroll, 100);
         }
     }, []);
+
+
+    const scrollToProgram = () => {
+        const el = document.querySelector("#program");
+        if (el) {
+            console.log("Found program section:", el);
+            (el as HTMLElement).scrollIntoView({ behavior: "smooth" });
+        } else {
+            console.log("Element #program not found!");
+        }
+    };
+
 
     return(<>
         <head>
@@ -49,15 +62,17 @@ const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, strin
 
                     {/* Content */}
                     <div className="relative z-10 text-center px-4 animate-fade-up">
-                        <img src="/logo.png" alt="logo" className="mx-auto mb-6 w-32 h-32 rounded-full shadow-lg animate-zoom-in" />
+                        <img src="/logo.png" alt="logo" className="mx-auto mb-6 w-32 h-32 shadow-lg animate-zoom-in" />
 
                         <h1 className="text-4x1 font-bold mb-4 drop-shadow-md">{messages.title}</h1>
                         <p className="text-lg max-w-2x1 mx-auto drop-shadow-sm">
                             {messages.desc}
                         </p>
-                        <a href="#program" className="mt-8 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded shadow hover:bg-gray-50 hover:text-black transition">
+                        {/* <a href="#program" className="mt-8 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded shadow hover:bg-gray-50 hover:text-black transition" onClick={() => scrollToProgram()}>
                             {messages.cta}
-                        </a>
+                        </a> */}
+                        <ScrollButton targetId="program" label={messages.cta} />
+
                     </div>
                 </section>
 

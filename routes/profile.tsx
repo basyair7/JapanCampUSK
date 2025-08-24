@@ -1,3 +1,4 @@
+// deno-lint-ignore-file
 import { h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { loadLang } from "../lib/i18n.ts";

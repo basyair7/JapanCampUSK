@@ -7,10 +7,12 @@ import * as $_app from "./routes/_app.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $news from "./routes/news.tsx";
 import * as $profile from "./routes/profile.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import * as $Footer from "./islands/Footer.tsx";
 import * as $Header from "./islands/Header.tsx";
+import * as $ScrollButton from "./islands/ScrollButton.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -20,12 +22,14 @@ const manifest = {
     "./routes/api/joke.ts": $api_joke,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/news.tsx": $news,
     "./routes/profile.tsx": $profile,
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
     "./islands/Footer.tsx": $Footer,
     "./islands/Header.tsx": $Header,
+    "./islands/ScrollButton.tsx": $ScrollButton,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
