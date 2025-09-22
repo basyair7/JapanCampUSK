@@ -15,7 +15,7 @@ export const handler: Handlers<Record<string, string>> = {
     },
 };
 
-const img_list: string[] = ["img1.jpg", "img2.jpg", "img3.jpg"];
+const img_list: string[] = ["images/img1.webp", "images/img2.webp", "images/img3.webp"];
 
 const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, string> }>) => {
     const { messages } = data;
@@ -56,7 +56,7 @@ const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, strin
 
         <main className="min-h-screen bg-gray-50 text-gray-800">
                 {/* Hero Section */}
-                <section className="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-white" style={{ backgroundImage: `url("/banner.jpg")`}}>
+                <section className="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-white bg-[url('/images/banner.webp')]">
                     {/* Overlay semi-transparant */}
                     <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 

@@ -26,8 +26,8 @@ const Profile = ({ data }: PageProps<{ lang: string, messages: Record<string, st
             <header className="relative py-40 px-4 text-center overflow-hidden">
                 {/* Background image blur */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center scale-105"
-                    style={{ backgroundImage: `url("/banner2.jpg")` }}
+                    className="absolute inset-0 bg-cover bg-center scale-105 bg-[url('/images/banner2.webp')]"
+                    // style={{ backgroundImage: `url("images/banner2.webp")` }}
                 ></div>
                 <div className="absolute inset-0 bg-black opacity-50"></div>
 
