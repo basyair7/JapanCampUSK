@@ -1,0 +1,73 @@
+{
+  "title": "Japan Camp IKAFT-USK",
+  "nav-title1": "Home",
+  "nav-title2": "Profile",
+  "nav-title3": "News",
+  "nav-title4": "Contact",
+  "desc": "Alumni Engineering Program of USK for Career Opportunities in Japan",
+  "cta": "Explore Our Program",
+  "program_title": "Learning Methods at Japan Camp",
+  "title_doc": "Japan Camp Activity Gallery",
+  "pendahuluan_title": "Introduction",
+  "pendahuluan": { 
+    "text1": "Japan has seen a significant increase in the number of foreign residents this year. According to the latest data from the Ministry of Internal Affairs and Communications of Japan, the number rose by 10.7% to 2.99 million as of July 2023 compared to the previous year. With a declining population, Japan is in need of skilled workers to sustain its economic growth.",
+    "text2": "Currently, Japan is opening up vast opportunities for foreign workers, particularly Indonesian citizens, to live and work in the country. Japan strongly hopes that more Indonesians will not only come as workers but also eventually choose Japan as their long-term residence. Indonesians are regarded as honest, hardworking, and fond of Japanese culture.",
+    "text3": "Indonesian workers in Japan are employed in various sectors such as construction, manufacturing, and healthcare. One of the key advantages of working in Japan is the high salary, which reflects the country’s high cost of living. With substantial earnings, workers are able to save more and improve their quality of life.",
+    "text4": "In collaboration with a training institute in Jakarta, DPP IKAFT USK 2023–2028 facilitated two Engineering Alumni of USK (particularly fresh graduates) to work in Japan as of January 10, 2024. To prepare Engineering Alumni (especially fresh graduates) for work in Japan, DPP IKAFT USK established JAPAN CAMP. This program is designed to train participants in Japanese language skills, culture, mental readiness, and discipline before they depart for Japan."
+  },
+  "tujuan_jc": {
+    "title": "Objectives of Japan Camp",
+    "text": "To equip USK Engineering Alumni (especially fresh graduates) with Japanese language proficiency and provide opportunities to work in Japan."
+  },
+  "lokasi": {
+    "title": "Program Location",
+    "text": "Jl. Fatahillah No.49, Geuceu Iniem, Banda Raya District, Banda Aceh 23239"
+  },
+  "peserta_jc": {
+    "title": "Japan Camp Participants",
+    "text": "USK Engineering Alumni (especially fresh graduates) with Bachelor/Diploma degrees from all majors, as well as Engineering Alumni with Bachelor/Diploma degrees from outside USK."
+  },
+  "metode_belajar": [
+    "1. Full-time Boarding (24 Hours)", 
+    "2. Mandatory Japanese Language Usage During the Camp",
+    "3. Learning Japanese Culture and Traditions",
+    "4. Character Building, Mental Training, and Discipline",
+    "5. Career Coaching"
+  ],
+  "contact_person" : {
+    "title1": "Coordinator",
+    "text1": "Dr. Muhajjir",
+    "title2": "WhatsApp",
+    "text2": "+6285276688611 (AK82)",
+    "number": "+6285276688611"
+  },
+  "daftar_title": "Opportunities Still Open!",
+  "daftar_text": "Register now if you are interested in advancing your career and building your future.",
+  "daftar_button": "Register",
+  "kenapa_japan_camp": {
+    "title": "Why Choose Japan Camp IKAFT-USK?",
+    "description": "Japan Camp IKAFT-USK is specially designed by DPP IKAFT USK to address the challenges and opportunities of working in Japan through a holistic approach. Here are the key reasons why you should join:",
+    "alasan": [
+      {
+        "judul": "Structured and Intensive Program",
+        "isi": "The learning method is designed with a full boarding system, allowing participants to focus on Japanese language, culture, work ethics, and character development 24/7."
+      },
+      {
+        "judul": "Guided by Practitioners and Alumni",
+        "isi": "Participants will be mentored by USK Engineering Alumni with real work experience in Japan, making the training relevant and practical."
+      },
+      {
+        "judul": "Real Career Opportunities",
+        "isi": "Japan Camp is not just a training program—it also opens direct pathways to employment opportunities in Japan through partnerships with trusted training institutions."
+      },
+      {
+        "judul": "Focus on Work Ethic and Japanese Mentality",
+        "isi": "In addition to language skills, participants will be trained in discipline, work ethic, and Japanese culture—essential qualities for living and working successfully in Japan."
+      },
+      {
+        "judul": "Strategic Location and Comprehensive Facilities",
+        "isi": "Located in Banda Aceh, Japan Camp USK offers a conducive learning environment with discipline and complete facilities to maximize participants’ growth."
+      }
+    ]
+  }
+}

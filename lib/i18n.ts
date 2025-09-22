@@ -1,6 +1,7 @@
 const langFiles: Record<string, string> = {
     id: "./i18n/id.json",
-    ja: "./i18n/ja.json"
+    ja: "./i18n/ja.json",
+    en: "./i18n/en.json",
 };
 
 const loadLang = async (lang: string): Promise<Record<string, string>> => {

@@ -11,6 +11,23 @@ const changeLanguage = (lang: string) => {
     globalThis.location.href = url.toString();
 };
 
+const LanguageSwitcher = ({ lang }: { lang: string }) => {
+    return(
+        <div className="flex items-center gap-2">
+            <select className="border p-2 rounder bg-white text-black"
+                value={ lang }
+                onChange={(e) => changeLanguage((e.target as HTMLSelectElement).value as "id" | "en" | "ja")}
+            >
+                <option value="id">🇮🇩 Indonesia</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="ja">🇯🇵 日本語</option>
+            </select>
+        </div>
+    );
+};
+
+const link: string[] = ["/", "/profile", "#news", "#contacts"];
+/*
 const buttonChange = (lang: string) => {
     return(<>
         <button
@@ -31,9 +48,7 @@ const buttonChange = (lang: string) => {
             日本語
         </button>
     </>);
-};
-
-const link: string[] = ["/", "/profile", "#news", "#contacts"];
+};*/
 
 const Header = ({ messages }: HeaderProps) => {
     const [ scrolled, setScrolled ] = useState(false);
@@ -84,7 +99,8 @@ const Header = ({ messages }: HeaderProps) => {
 
                         {/* Language Switcher */}
                         <div className="ml-4 space-x-1">
-                            {buttonChange(lang)}
+                            {/* {buttonChange(lang)} */}
+                            <LanguageSwitcher lang={lang}/>
                         </div>
                     </nav>
 
@@ -144,7 +160,8 @@ const Header = ({ messages }: HeaderProps) => {
 
                     {/* Language Switcher */}
                     <div className="flex items-center gap-2 mt-6">
-                        {buttonChange(lang)}
+                        {/* {buttonChange(lang)} */}
+                        <LanguageSwitcher lang={lang}/>
                     </div>
                 </nav>
             </div>
