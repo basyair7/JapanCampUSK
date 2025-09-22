@@ -13,66 +13,6 @@ const changeLanguage = (lang: string) => {
 
 const link: string[] = ["/", "/profile", "#news", "#contacts"];
 
-// const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
-//     const [ open, setOpen ] = useState(false);
-//     const [ lang, setLang ] = useState("en");
-
-//     const options = [
-//         { code: "id", label: "🇮🇩 Indonesia" },
-//         { code: "en", label: "🇬🇧 English" },
-//         { code: "ja", label: "🇯🇵 日本語" }
-//     ];
-
-//     useEffect(() => {
-//         const url = new URL(globalThis.location.href);
-//         const langInURL = url.searchParams.get("lang");
-//         const langInStorage = localStorage.getItem("lang");
-
-//         if (langInURL) {
-//             setLang(langInURL);
-//         } else if (langInStorage) {
-//             setLang(langInStorage);
-//         }
-//     }, []);
-
-//     return(
-//         <div className="relative inline-block text-left">
-//             <button
-//                 onClick={() => setOpen(!open)}
-//                 className={class_name}
-//             >
-//                 {options.find((o) => o.code === lang)?.label}
-//                 <svg
-//                     className="w-4 h-4"
-//                     fill="none"
-//                     stroke="currentColor"
-//                     strokeWidth="2"
-//                     viewBox="0 0 24 24"
-//                 >
-//                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-//                 </svg>
-//                 {open && (
-//                     <div className="absolute mt-2 w-40 rounded-lg bg-black/70 backdrop-blur-md text-white shadow-lg">
-//                         {options.map((o) => (
-//                             <div 
-//                                 className="px-3 py-2 cursor-pointer hover:bg-white/20"
-//                                 key={o.code}
-//                                 onClick={() => {
-//                                     setLang(o.code);
-//                                     setOpen(false);
-//                                     changeLanguage(o.code);
-//                                 }}    
-//                             >
-//                                 {o.label}
-//                             </div>
-//                         ))}
-//                     </div>
-//                 )}
-//             </button>
-//         </div>
-//     );
-// };
-
 const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
     const [open, setOpen] = useState(false);
     const [lang, setLang] = useState("id");
