@@ -97,7 +97,7 @@ const Home = ({ data }: PageProps<{ lang: string, messages: Record<string, strin
                             <h2 className="text-2xl font-bold mb-8">{messages.title_doc}</h2>
                             <div className="grid gird-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                                 {img_list.map((file) => (
-                                    <img src={`/${file}`} alt="" className="rounded-lg shadow-lg hover:scale-105 transform transition duration-300" />
+                                    <img src={`/${file}`} alt="" loading="lazy" className="rounded-lg shadow-lg hover:scale-105 transform transition duration-300" />
                                 ))}
                             </div>
                         </div>
