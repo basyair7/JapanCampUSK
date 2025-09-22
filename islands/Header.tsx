@@ -14,7 +14,7 @@ const changeLanguage = (lang: string) => {
 const LanguageSwitcher = ({ lang }: { lang: string }) => {
     return(
         <div className="flex items-center gap-2">
-            <select className="border p-2 rounder bg-white text-black"
+            <select className="border-none bg-transparent text-white font-medium appearance-none pr-6 cursor-pointer focus:outline-none focus:ring-0"
                 value={ lang }
                 onChange={(e) => changeLanguage((e.target as HTMLSelectElement).value as "id" | "en" | "ja")}
             >
