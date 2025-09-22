@@ -11,22 +11,133 @@ const changeLanguage = (lang: string) => {
     globalThis.location.href = url.toString();
 };
 
-const LanguageSwitcher = ({ lang }: { lang: string }) => {
-    return(
-        <div className="flex items-center gap-2">
-            <select className="border-none bg-transparent text-black font-medium appearance-none pr-6 cursor-pointer focus:outline-none focus:ring-0"
-                value={ lang }
-                onChange={(e) => changeLanguage((e.target as HTMLSelectElement).value as "id" | "en" | "ja")}
+const link: string[] = ["/", "/profile", "#news", "#contacts"];
+
+// const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
+//     const [ open, setOpen ] = useState(false);
+//     const [ lang, setLang ] = useState("en");
+
+//     const options = [
+//         { code: "id", label: "🇮🇩 Indonesia" },
+//         { code: "en", label: "🇬🇧 English" },
+//         { code: "ja", label: "🇯🇵 日本語" }
+//     ];
+
+//     useEffect(() => {
+//         const url = new URL(globalThis.location.href);
+//         const langInURL = url.searchParams.get("lang");
+//         const langInStorage = localStorage.getItem("lang");
+
+//         if (langInURL) {
+//             setLang(langInURL);
+//         } else if (langInStorage) {
+//             setLang(langInStorage);
+//         }
+//     }, []);
+
+//     return(
+//         <div className="relative inline-block text-left">
+//             <button
+//                 onClick={() => setOpen(!open)}
+//                 className={class_name}
+//             >
+//                 {options.find((o) => o.code === lang)?.label}
+//                 <svg
+//                     className="w-4 h-4"
+//                     fill="none"
+//                     stroke="currentColor"
+//                     strokeWidth="2"
+//                     viewBox="0 0 24 24"
+//                 >
+//                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+//                 </svg>
+//                 {open && (
+//                     <div className="absolute mt-2 w-40 rounded-lg bg-black/70 backdrop-blur-md text-white shadow-lg">
+//                         {options.map((o) => (
+//                             <div 
+//                                 className="px-3 py-2 cursor-pointer hover:bg-white/20"
+//                                 key={o.code}
+//                                 onClick={() => {
+//                                     setLang(o.code);
+//                                     setOpen(false);
+//                                     changeLanguage(o.code);
+//                                 }}    
+//                             >
+//                                 {o.label}
+//                             </div>
+//                         ))}
+//                     </div>
+//                 )}
+//             </button>
+//         </div>
+//     );
+// };
+
+const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
+    const [open, setOpen] = useState(false);
+    const [lang, setLang] = useState("id");
+
+    const options = [
+        { code: "id", label: "🇮🇩 Indonesia" },
+        { code: "en", label: "🇬🇧 English" },
+        { code: "ja", label: "🇯🇵 日本語" },
+    ];
+
+    useEffect(() => {
+        const url = new URL(globalThis.location.href);
+        const langInURL = url.searchParams.get("lang");
+        const langInStorage = localStorage.getItem("lang");
+
+        if (langInURL) {
+        setLang(langInURL);
+        } else if (langInStorage) {
+        setLang(langInStorage);
+        }
+    }, []);
+
+    return (
+        <div className="relative inline-block text-left">
+        {/* Tombol utama */}
+        <button
+            onClick={() => setOpen(!open)}
+            className={`${class_name} flex items-center gap-1`}
+        >
+            {options.find((o) => o.code === lang)?.label}
+            <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
             >
-                <option value="id">🇮🇩 Indonesia</option>
-                <option value="en">🇬🇧 English</option>
-                <option value="ja">🇯🇵 日本語</option>
-            </select>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+
+        </button>
+
+        {/* Dropdown */}
+        {open && (
+            <div className="absolute mt-2 w-40 rounded-lg bg-black/70 backdrop-blur-md text-white shadow-lg">
+            {options.map((o) => (
+                <div
+                key={o.code}
+                onClick={() => {
+                    setLang(o.code);
+                    setOpen(false);
+                    changeLanguage(o.code);
+                }}
+                className="px-3 py-2 cursor-pointer hover:bg-white/20"
+                >
+                {o.label}
+                </div>
+            ))}
+            </div>
+        )}
         </div>
     );
 };
 
-const link: string[] = ["/", "/profile", "#news", "#contacts"];
+
 /*
 const buttonChange = (lang: string) => {
     return(<>
@@ -100,7 +211,11 @@ const Header = ({ messages }: HeaderProps) => {
                         {/* Language Switcher */}
                         <div className="ml-4 space-x-1">
                             {/* {buttonChange(lang)} */}
-                            <LanguageSwitcher lang={lang}/>
+                            <LanguageSwitcher 
+                                class_name={`flex items-center gap-2 font-medium ${
+                                scrolled ? "text-gray-900" : "text-white"
+                            }`}
+                        />
                         </div>
                     </nav>
 
@@ -161,7 +276,7 @@ const Header = ({ messages }: HeaderProps) => {
                     {/* Language Switcher */}
                     <div className="flex items-center gap-2 mt-6">
                         {/* {buttonChange(lang)} */}
-                        <LanguageSwitcher lang={lang}/>
+                        <LanguageSwitcher class_name="text-gray-900"/>
                     </div>
                 </nav>
             </div>
