@@ -52,7 +52,6 @@ const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
             >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
-
         </button>
 
         {/* Dropdown */}
