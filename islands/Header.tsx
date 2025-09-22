@@ -1,3 +1,5 @@
+// deno-lint-ignore-file
+
 import { useEffect, useState } from "preact/hooks";
 
 type HeaderProps = {
@@ -13,6 +15,7 @@ const changeLanguage = (lang: string) => {
 
 const link: string[] = ["/", "/profile", "#news", "#contacts"];
 
+/*
 const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
     const [open, setOpen] = useState(false);
     const [lang, setLang] = useState("id");
@@ -37,7 +40,6 @@ const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
 
     return (
         <div className="relative inline-block text-left">
-        {/* Tombol utama */}
         <button
             onClick={() => setOpen(!open)}
             className={`${class_name} flex items-center gap-1`}
@@ -54,7 +56,6 @@ const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
             </svg>
         </button>
 
-        {/* Dropdown */}
         {open && (
             <div className="absolute mt-2 w-40 rounded-lg bg-black/70 backdrop-blur-md text-white shadow-lg">
             {options.map((o) => (
@@ -73,6 +74,34 @@ const LanguageSwitcher = ({ class_name }: { class_name: string }) => {
             </div>
         )}
         </div>
+    );
+};*/
+
+const LanguageSwitcher = () => {
+    const [lang, setLang] = useState("id");
+
+    useEffect(() => {
+        const url = new URL(globalThis.location.href);
+        const langInURL = url.searchParams.get("lang");
+        const langInStorage = localStorage.getItem("lang");
+
+        if (langInURL) setLang(langInURL);
+        else if (langInStorage) setLang(langInStorage);
+    }, []);
+
+    return (
+        <select
+            value={lang}
+            onChange={(e) => {
+                setLang(e.target.value);
+                changeLanguage(e.target.value);
+            }}
+            className="px-3 py-1 rounded bg-white text-black"
+        >
+            <option value="id">🇮🇩 Indonesia</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="ja">🇯🇵 日本語</option>
+        </select>
     );
 };
 
@@ -150,11 +179,7 @@ const Header = ({ messages }: HeaderProps) => {
                         {/* Language Switcher */}
                         <div className="ml-4 space-x-1">
                             {/* {buttonChange(lang)} */}
-                            <LanguageSwitcher 
-                                class_name={`flex items-center gap-2 font-medium ${
-                                scrolled ? "text-gray-900" : "text-white"
-                            }`}
-                        />
+                            <LanguageSwitcher />
                         </div>
                     </nav>
 
@@ -215,7 +240,7 @@ const Header = ({ messages }: HeaderProps) => {
                     {/* Language Switcher */}
                     <div className="flex items-center gap-2 mt-6">
                         {/* {buttonChange(lang)} */}
-                        <LanguageSwitcher class_name="text-gray-900"/>
+                        <LanguageSwitcher />
                     </div>
                 </nav>
             </div>
